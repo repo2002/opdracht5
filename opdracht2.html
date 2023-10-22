@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Opdracht 2 | Examen Media Production Web - Javascript</title>
+    <meta name="description" content="Examen Media Production Web - Javascript - Opdracht 2" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/_main.min.css">
+    <link rel="stylesheet" href="./styles/opdracht2.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="brand">
+                <a href="index.html"><img class="logo" src="./images/logo.png" alt="Karel de Grote Hogeschool"></a>
+            </div>
+
+            <div class="nav home">
+                <a href="index.html">🏠 Uitleg</a>
+            </div>
+
+            <h2>Hoofd opdrachten</h2>
+            <div class="nav">
+                <a href="opdracht1.html"><span class="icon">1</span> Opdracht 1 (8) (+1)</a>
+                <a href="opdracht2.html" class="active"><span class="icon">2</span> Opdracht 2 (6) (+1)</a>
+                <a href="opdracht3.html"><span class="icon">3</span> Opdracht 3 (3)</a>
+                <a href="opdracht4.html"><span class="icon">4</span> Opdracht 4 (3)</a>
+            </div>
+
+            <h2>🎉 Bonus opdracht 🎉</h2>
+            <div class="nav">
+                <a href="opdracht5.html"><span class="icon">6</span>Opdracht 5 (+2)</a>
+            </div>
+        </div>
+
+        <div class="main">
+            <h1>Opdracht 2</h1>
+            <div class="enhance-readability has-tip">
+                <div class="text-wrapper">
+                    <p>
+                        Hieronder staat een informatieve tekst over de emoe. Je ziet dat er woorden zijn onderstreept. Als je over die woorden <x-marker>"hovered"</x-marker> moet de <x-marker>juiste verklaring</x-marker> van dat woord <x-marker>verschijnen</x-marker>. (Je vind deze teksten in <code>opdracht2.js</code>)
+                    </p>
+                    <p>
+                        De bedoeling is dat mensen de tekst en verklaringen lezen en dan een quiz oplossen. Onderaan de quiz wordt <x-marker>je score getoond</x-marker> en de vragen die je fout hebt komen <x-marker>in het rood</x-marker> te staan.
+                        Als je <x-marker>score 0 of 1</x-marker> is staat deze ook <x-marker>in het rood</x-marker>, <x-marker>meer dan 1 is groen</x-marker>.
+                    </p>
+                    🎥 <a href="./videos/opdracht2_1.html" target="_blank">Voorbeeld verwachte functionaliteit</a>
+                    <h3>Bonus challenge (+1)</h3>
+                    <p>
+                        Zorg ervoor dat wanneer je <x-marker>alle antwoorden juist</x-marker> hebt, er <x-marker>confetti</x-marker> op het scherm komt. (Hoe dat die confetti eruit ziet maakt niet uit, whatever you can find online 😉)
+                    </p>
+                    🎥 <a href="./videos/opdracht2_2.html" target="_blank">Voorbeeld verwachte functionaliteit</a>
+                </div>
+                <div class="tip">
+                    <h3>Tip 1</h3><p>Zet in <code>opdracht2.css</code> bij de <code>.callout</code> de <code>display: none;</code> even in commentaar. Zo kan je zien wat juist waar moet verschijnen.</p>
+                    <h3>Tip 2</h3><p>Om een actie van een formulier te stoppen, gebruiken we <code>event.preventDefault();</code></p>
+                    <h3>Tip 3</h3><p>Om de <i>Tooltip</i> te tonen en te verbergen, kan je de <strong>Eventlisteners</strong> <code>mouseenter</code> en <code>mouseleave</code> gebruiken.</p>
+                </div>
+            </div>
+            <hr />
+
+            <!-------------------------->
+            <!-- 👇 YOUR PLAYGROUND 👇 -->
+            <!-------------------------->
+
+            <h2>Introductie</h2>
+            <p>De emoe (Dromaius <span id="tooltip1" class="tooltip">novaehollandiae</span>) is een vogel uit het
+                (monotypische) geslacht <span id="tooltip2" class="tooltip">Dromaius</span> en de familie <span
+                    id="tooltip3" class="tooltip">Casuariidae</span> (Kasuarissen en emoes). Deze loopvogel is na de
+                struisvogel de grootste nog levende vogelsoort en de grootste van Australië. De vogel bewoont de meeste
+                gebieden van het continent, behalve gebieden die dichtbevolkt zijn, dicht bebost zijn of bedekt zijn
+                door <span id="tooltip4" class="tooltip">woestijn</span>.</p>
+
+            <div class="callout"></div>
+
+            <h2>Quiz</h2>
+            <form>
+                <label id="vraag1" for="vraag1">1. Van welk geslacht is de emoe?</label>
+                <div class="radio-container">
+                    <input type="radio" name="vraag1" id="vraag1-1" value="monotypische">
+                    <label class="radio-label" for="vraag1-1">Monotypisch</label>
+                </div>
+                <div class="radio-container">
+                    <input type="radio" name="vraag1" id="vraag1-2" value="m">
+                    <label class="radio-label" for="vraag1-2">Mannelijk</label>
+                </div>
+                <div class="radio-container">
+                    <input type="radio" name="vraag1" id="vraag1-3" value="v">
+                    <label class="radio-label" for="vraag1-3">Vrouwelijk</label>
+                </div>
+                <div class="radio-container">
+                    <input type="radio" name="vraag1" id="vraag1-4" value="x">
+                    <label class="radio-label" for="vraag1-4">X</label>
+                </div>
+                <br />
+                <label id="vraag2" for="vraag2">2. Is de Emoe een loopvogel?</label>
+                <div class="radio-container">
+                    <input type="radio" name="vraag2" id="vraag2-1" value="ja">
+                    <label class="radio-label" for="vraag2-1">Ja</label>
+                </div>
+                <div class="radio-container">
+                    <input type="radio" name="vraag2" id="vraag2-2" value="nee">
+                    <label class="radio-label" for="vraag2-2">Nee</label>
+                </div>
+                <br />
+                <label id="vraag3" for="vraag3">3. Valt er veel neerslag in de woestijn?</label>
+                <div class="radio-container">
+                    <input type="radio" name="vraag3" id="vraag3-1" value="ja">
+                    <label class="radio-label" for="vraag3-1">Ja</label>
+                </div>
+                <div class="radio-container">
+                    <input type="radio" name="vraag3" id="vraag3-2" value="nee">
+                    <label class="radio-label" for="vraag3-2">Nee</label>
+                </div>
+                <br />
+                <input type="submit" value="Verbeteren!" />
+                <br />
+                <p id="score">
+                    Jouw score is: <span id="points">0</span>
+                </p>
+            </form>
+
+            <!-------------------------->
+            <!-- 👆 YOUR PLAYGROUND 👆 -->
+            <!-------------------------->
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="./scripts/opdracht2.js" type="text/javascript"></script>
+</body>
+
+</html>
