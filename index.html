@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Examen Media Production Web - Javascript</title>
+    <meta name="description" content="Examen Media Production Web - Javascript" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/_main.min.css">
+    <link rel="stylesheet" href="./styles/opdracht1.css">
+</head>
+
+<body>
+    <div class="container-toc">
+        <div class="sidebar">
+            <div class="brand">
+                <a href="index.html"><img class="logo" src="./images/logo.png" alt="Karel de Grote Hogeschool"></a>
+            </div>
+
+            <div class="nav home">
+                <a href="index.html" class="active">🏠 Uitleg</a>
+            </div>
+
+            <h2>Hoofd opdrachten</h2>
+            <div class="nav">
+                <a href="opdracht1.html"><span class="icon">1</span> Opdracht 1 (8) (+1)</a>
+                <a href="opdracht2.html"><span class="icon">2</span> Opdracht 2 (6) (+1)</a>
+                <a href="opdracht3.html"><span class="icon">3</span> Opdracht 3 (3)</a>
+                <a href="opdracht4.html"><span class="icon">4</span> Opdracht 4 (3)</a>
+            </div>
+
+            <h2>🎉 Bonus opdracht 🎉</h2>
+            <div class="nav">
+                <a href="opdracht6.html"><span class="icon">6</span>Opdracht 5 (+2)</a>
+            </div>
+        </div>
+
+        <div class="main enhance-readability">
+            <h1>Home</h1>
+            <h2>Examenregels</h2>
+            <ul>
+                <li>
+                    Het is een examen javascript. Je zal dus een minimum aan (visuele) HTML/CSS moeten schrijven en zal
+                    hier ook niet op worden beoordeeld.
+                </li>
+                <li>
+                    Je zal mogelijks wel functionele zaken moeten toevoegen aan HTML/CSS (classes, id’s), deze worden wel
+                    mee
+                    beoordeeld.
+                </li>
+                <li>
+                    Je mag ChatGPT gebruiken voor kleine specifieke vragen. Je mag niet de oplossing van oefeningen
+                    vragen. De
+                    docenten mogen ten allen tijde vragen om uw ChatGPT scherm te bekijken.
+                </li>
+                <li>Je mag externe bronnen gebruiken; Google, online documentatie enz…</li>
+                <li>
+                    Je mag géén code van elkaar gebruiken, je mag géén code naar elkaar doorsturen, je mag niet
+                    communiceren
+                    met elkaar of anderen. Iedereen schrijft zijn eigen unieke code! <strong>Elk</strong> vermoeden van fraude (code delen,
+                    helpen,
+                    etc…) zal voor de examencommissie worden gebracht.
+                </li>
+                <li>
+                    Discord of andere chattools mogen niet worden gebruikt. Als we een online communicatietool op iemand zijn scherm zien is dat instant 0.
+                </li>
+            </ul>
+
+
+            <h2>Way of working</h2>
+            <ul>
+                <li>
+                    Je schrijft javascript op de manier die we dit hebben geleerd. Ik wil bv. in geen geval `onclick` attributen op
+                    HTML
+                    elementen zien. Alles wordt aangestuurd via event listeners. In je HTML code mag géén javascript
+                    staan. (op
+                    het inladen van externe scripts na)
+                </li>
+                <li>
+                    Alle javascript- en CSS-files worden extern ingeladen, géén inline scripts. (behalve voor het
+                    initialiseren
+                    van een extern gedownloade of gelinkte library)
+                </li>
+                <li>
+                    Je gebruikt per opdracht de daarvoor voorziene CSS en JS files. (<code>opdracht1.js, opdracht1.css,...</code>)
+                </li>
+            </ul>
+            <h2>Tips & Tricks</h2>
+            <ul>
+                <li>Je mag zelf kiezen wat je met of zonder jQuery doet. (jQuery gebruiken is dus geen verplichting)
+                </li>
+                <li>
+                    Enkel de bonusopdracht <x-marker>(Opdracht 5)</x-marker> dient wel in jQuery gemaakt te worden als je aanspraak wil maken op de bonuspunten.
+                </li>
+                <li>Functionaliteit primeert boven looks!</li>
+                <li>
+                    Test alles via de `Live server` plugin in VScode. Zo zal het examen ook nagekeken worden. Docenten
+                    gaan
+                    geen aanpassingen aan code doen om alles te doen werken. Testen voor je instuurt dus!
+                </li>
+                <li>
+                    Ook als je het moeilijk hebt, probeer te doen wat je kan. Alle beetjes helpen. Het is geen “alles of
+                    niets”-verhaal, dus proberen loont! (en wordt niet afgestraft) De voorbeelden (filmpjes) die je ziet zijn de best en meest propere oplossingen. Dat wil niet zeggen dat al de rest fout is. Als je een oplossing hebt die werkt, maar niet helemaal hetzelfde is als het voorbeeld, dan is dat ook goed. (zolang het maar werkt)
+                </li>
+                <li>
+                    Als je CSS wil aanpassen omdat je die makkelijker vindt kan dit. HTML liefst volledig intact houden.
+                </li>
+                <li>Je hoeft niet persé de class triggers te gebruiken die zijn voorzien. Je kan ook met ID's of andere manieren werken om naar elementen te luisteren of deze te manipuleren.</li>
+                <li>Er is altijd aangegeven waar je kan werken in de html-files (<a href="https://x.gnx.li/bVhRHYzH" target="_blank">Screenshot</a>) Uiteraard mag je je daar ook buiten begeven maar in theorie is het niet nodig (tenzij je een extra javascript-file wil inladen ofzo)</li>
+                <li>Google is your friend! (en vergeet ook w3schools niet, super handig!)</li>
+                <li>
+                    ChatGPT can be your friend maar be cautious. Ons algemeen advies is om ChatGTP-gebruik te beperken
+                    of te
+                    laten. We hebben het gevoel dat het dit voor veel studenten net moeilijker maakt dan makkelijker.
+                    (ChatGPT
+                    is vooral interessant als je de materie al goed beheerst)
+                </li>
+            </ul>
+
+            <h2>Hoe zal het examen er ongeveer uitzien</h2>
+            <ul>
+                <li>14 van de 20 punten</li>
+                <ul>
+                    <li>
+                        Je zal javascript-functionaliteit moeten schrijven om interactie met pagina’s en formulieren te
+                        voorzien.
+                        DOM en FORMS zullen hier super belangrijk zijn!
+                    </li>
+                </ul>
+                <li>6 van de 20 punten (= puntenpakker!)</li>
+                <ul>
+                    <li>
+                        Je zal functionaliteit moeten integreren met behulp van bestaande javascript-libraries die je
+                        zelf opzoekt
+                        en implementeert.
+                    </li>
+                </ul>
+                <li>🎉 4 bonuspunten (hou dit voor op het laatst, als je tijd over hebt!)</li>
+                <ul>
+                    <li>
+                        Bij Opdracht 1 en Opdracht 2 kan je telkens 1 bonuspunt verdienen.
+                    </li>
+                    <li>
+                        Opdracht 5 is een bonusopdracht waar je 2 punten kan verdienen. Deze <strong>moet</strong> in jQuery worden gemaakt.
+                    </li>
+                </ul>
+            </ul>
+        </div>
+        <div class="toc">
+            <h2>Table of contents</h2>
+            <ul></ul>
+        </div>
+    </div>
+
+    <script src="./scripts/_main.min.js" type="text/javascript"></script>
+</body>
+
+</html>

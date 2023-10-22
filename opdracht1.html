@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Opdracht 1 | Examen Media Production Web - Javascript</title>
+    <meta name="description" content="Examen Media Production Web - Javascript - Opdracht 1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/_main.min.css">
+    <link rel="stylesheet" href="./styles/opdracht1.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="brand">
+                <a href="index.html"><img class="logo" src="./images/logo.png" alt="Karel de Grote Hogeschool"></a>
+            </div>
+
+            <div class="nav home">
+                <a href="index.html">🏠 Uitleg</a>
+            </div>
+
+            <h2>Hoofd opdrachten</h2>
+            <div class="nav">
+                <a href="opdracht1.html" class="active"><span class="icon">1</span> Opdracht 1 (8) (+1)</a>
+                <a href="opdracht2.html"><span class="icon">2</span> Opdracht 2 (6) (+1)</a>
+                <a href="opdracht3.html"><span class="icon">3</span> Opdracht 3 (3)</a>
+                <a href="opdracht4.html"><span class="icon">4</span> Opdracht 4 (3)</a>
+            </div>
+
+            <h2>🎉 Bonus opdracht 🎉</h2>
+            <div class="nav">
+                <a href="opdracht5.html"><span class="icon">6</span>Opdracht 5 (+2)</a>
+            </div>
+        </div>
+
+        <div class="main">
+            <h1>Opdracht 1</h1>
+            <div class="enhance-readability has-tip">
+                <div class="text-wrapper">
+                    <p>
+                        Er staat een formulier met <x-marker>2 stappen</x-marker>. De 2de stap is verborgen (<code>.hidden</code>). Zorg ervoor dat als je op de knop "Ga naar stap 2" klikt, het <x-marker>formulier gevalideerd</x-marker> wordt (alles moet worden ingevuld!) en dat vervolgens <x-marker>de 2de stap tevoorschijn komt</x-marker>.<br />
+                        Op stap 2 wordt je <x-marker>naam</x-marker> getoond met daaronder een <x-marker>grijs vakje</x-marker>. Zorg ervoor dat als iemand zijn <x-marker>politieke voorkeur selecteert,</x-marker> het vakje <x-marker>de kleur krijgt</x-marker> die hierbij hoort.
+                    </p>
+                    <strong>Extra aandachtpunten:</strong>
+                    <ul>
+                        <li>Het email-adres moet een geldig email-adres zijn</li>
+                        <li>Validatiestijl zoals in het filmpje (geen alerts of dergelijke!)</li>
+                        <li>Alles moet met javascript gevalideerd worden, geen ingebouwde browser validatie gebruiken!</li>
+                    </ul>
+                    🎥 <a href="./videos/opdracht1_1.html" target="_blank">Voorbeeld verwachte functionaliteit</a>
+                    <h3>Bonus challenge (+1)</h3>
+                    <p>
+                        Zorg ervoor dat als je foutmeldingen hebt op je formulier (<code>.error</code>) deze al verdwijnen van <x-marker>zodra het veld gevalideerd</x-marker> is.<br />Het verschil is dus dat je zonder bonus op de submit-knop moet duwen om de foutmeldingen weg te krijgen en met bonus, dat ze reageren <x-marker>"as you type"</x-marker>. (zie video voor extra verduidelijking)
+                    </p>
+                    🎥 <a href="./videos/opdracht1_2.html" target="_blank">Voorbeeld verwachte functionaliteit</a>
+                </div>
+                <div class="tip">
+                    <h3>Tip 1</h3><p>Om een actie van een formulier te stoppen gebruiken we <code>event.preventDefault();</code></p>
+                    <h3>Tip 2</h3><p>Kijk zeker naar de CSS-file van deze opdracht. Alle classes die je nodig hebt zijn al aangemaakt.</p>
+                    <h3>Tip 3</h3><p>Voor het "naar stap 2"-gaan hoef je enkel de class hidden weg te halen op <code>.step2</code> en toe te voegen aan <code>.step1</code>.</p>
+                    <h3>Tip 4</h3><p>Om op het wijzijgen van een <code>select</code> te reageren, moet je de <strong>Eventlistener</strong> <code>change</code> gebruiken.</p>
+                </div>
+            </div>
+            <hr />
+
+            <!-------------------------->
+            <!-- 👇 YOUR PLAYGROUND 👇 -->
+            <!-------------------------->
+
+            <div id="step1">
+                <h2>Stap 1</h2>
+                <form id="step1Form">
+                    <label for="name">Naam</label>
+                    <input type="text" name="name" id="name" placeholder="Naam" autocomplete="off" />
+                    <label for="name">Email</label>
+                    <input type="text" name="email" id="email" placeholder="joske@vermeulen.be" autocomplete="off" />
+                    <input class="trigger--step2" type="submit" value="Ga naar stap 2" />
+                </form>
+            </div>
+            <div id="step2" class="hidden">
+                <h2>Stap 2</h2>
+                <p>Je naam is: <span id="show--name"></span></p>
+                <p>Je politieke voorkeur is: <span id="box"></span></p>
+                <form id="step2Form">
+                    <label for="preference">Politieke voorkeur</label>
+                    <select name="preference" id="preference">
+                        <option value="0">-- Selecteer je voorkeur --</option>
+                        <option value="orange">CD&V</option>
+                        <option value="green">Groen</option>
+                        <option value="yellow">NVA</option>
+                        <option value="blue">Open VLD</option>
+                        <option value="red">Vooruit</option>
+                    </select>
+                    <input type="submit" value="Verzenden" />
+                </form>
+            </div>
+
+            <!-------------------------->
+            <!-- 👆 YOUR PLAYGROUND 👆 -->
+            <!-------------------------->
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="./scripts/opdracht1.js" type="text/javascript"></script>
+</body>
+</html>
